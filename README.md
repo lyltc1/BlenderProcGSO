@@ -1,23 +1,13 @@
 # BlenderProcGSO
 Physically Based Rendering for Google Scanned Object using BlenderProc2
-
 ## Supported Platforms
-- Linux 16.04 (Not Tested)
-- Linux 18.04 (Not Tested)
-- Linux 20.04 (Not Tested)
 - Linux 22.04 (Tested)
-- Mac (Not Tested)
-- Windows (Not supported because BlenderProc is currently not supported on Windows. However, BOP toolkit supports direct rendering using its own renderers.)
-## Create Conda Environment
+## Prerequisite
 ```
 conda create -n pbr python=3.9
 conda activate pbr
 ```
-
-## Git Pull
-
 pull with
-
 ```
 git clone --recursive https://github.com/lyltc1/BlenderProcGSO.git
 ```
@@ -27,28 +17,50 @@ git clone https://github.com/lyltc1/BlenderProcGSO.git
 cd BlenderProcGSO
 git submodule update --init
 ```
-
-## Get Started
-
-### 1. Prerequisite
-
-Notice: For detailed instructions, check
-
-https://github.com/thodan/bop_toolkit
-
+build environment
 ```
-pip install pyyaml
-pip install cython
-pip install -r bop_toolkit/requirements.txt
-sudo apt install freetype
-sudo apt install libglfw3
+sudo apt install gfortran, liblapack-dev
+sudo apt install libfreetype6-dev
+pip3 install Cython==0.29.24
+cd path/to/bop_toolkit
+pip install -r requirements.txt -e .
+cd path/to/BlenderProc
+pip install -e .
 ```
-**Note: If freetype cannot be installed, try install it with the following command:**
-```
-sudo apt update && sudo apt install freetype2-demos
-```
-Install any other missing dependency if prompted.
+**Note: Install any other missing dependency if prompted.
 
-### 2. Run Image Generation
+## Prepare data
+### Google Scanned Objects
+- download
 
+option 1: download by Script provided by GSO origin paper
+```
+TODO
+```
+option2: download by Baiduyun
+```
+TODO
+```
+- extract
+```
+cp path/to/BlenderProcGSO/utility/unzipGSO.py path/to/BlenderProc/resources/GoogleScannedObjects
+cd path/to/BlenderProc/resources/GoogleScannedObjects
+python unzipGSO.py
+```
+
+### cc_texture
+- download
+
+option 1: download by script provided by blenderproc
+```
+blenderproc download cc_textures path/to/BlenderProc/resources
+```
+option 2: download by Baiduyun
+```
+TODO
+```
+option 3: download by OneDrive
+```
+TODO
+```
 ## Customization
