@@ -8,6 +8,11 @@ Physically Based Rendering for Google Scanned Object using BlenderProc2
 - Linux 22.04 (Tested)
 - Mac (Not Tested)
 - Windows (Not supported because BlenderProc is currently not supported on Windows. However, BOP toolkit supports direct rendering using its own renderers.)
+## Create Conda Environment
+```
+conda create -n pbr python=3.9
+conda activate pbr
+```
 
 ## Git Pull
 
