@@ -51,9 +51,8 @@ python unzipGSO.py
 ```
 
 ### cc_texture
-- download
 
-option 1: download by script provided by blenderproc
+option 1: download seperate texture folders by script provided by blenderproc
 ```
 blenderproc download cc_textures path/to/BlenderProc/resources
 ```
